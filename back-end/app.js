@@ -10,9 +10,9 @@ app.use(cors());
 app.use(express.json()); // Parse incoming JSON
 
 // ROUTES
-app.get("/", (req, res) => {
+app.get("/", (_, response) => {
   console.log("GET request to /")
-  res.send("Hello, world!");
+  response.send("Hello, world!");
 });
 
 /////////////////////////////////////
@@ -20,13 +20,13 @@ app.get("/", (req, res) => {
 /////////////////////////////////////
 const db = require("./db/dbConfig.js");
 
-app.get("/test", async (req, res) => {
+app.get("/test", async (_, response) => {
   console.log("GET request to /test")
   try {
     const allDays = await db.any("SELECT * FROM test");
-    res.json(allDays);
+    response.json(allDays);
   } catch (err) {
-    res.json(err);
+    response.json(err);
   }
 });
 
