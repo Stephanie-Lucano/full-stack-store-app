@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 const API = process.env.REACT_APP_API_URL;
 
+console.log(API);
 function App() {
   const [days, setDays] = useState([]);
   useEffect(() => {
