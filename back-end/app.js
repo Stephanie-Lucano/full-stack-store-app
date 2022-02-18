@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json()); // Parse incoming JSON
 
 // ROUTES
-console.log("GET request to /")
 app.get("/", (_, response) => {
+  console.log("GET request to /")
   response.send("Hello, world!");
 });
 
