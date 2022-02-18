@@ -11,6 +11,7 @@ app.use(express.json()); // Parse incoming JSON
 
 // ROUTES
 app.get("/", (req, res) => {
+  console.log("GET request to /")
   res.send("Hello, world!");
 });
 
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 const db = require("./db/dbConfig.js");
 
 app.get("/test", async (req, res) => {
+  console.log("GET request to /test")
   try {
     const allDays = await db.any("SELECT * FROM test");
     res.json(allDays);
