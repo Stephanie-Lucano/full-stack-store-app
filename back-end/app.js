@@ -24,15 +24,19 @@ app.get("/test", async (_, response) => {
   console.log("GET request /test")
   try {
     const allDays = await db.any("SELECT * FROM test");
-    response.json(allDays);
+    response.status(200).json(allDays);
   } catch (err) {
-    response.json(err);
+    response.status(404).json(err);
   }
 });
 
 /////////////////////////////////////
 // REMOVE AFTER SUCCESSFUL DEPLOYMENT
 /////////////////////////////////////
+
+app.get("*", (_, response) => {
+  response.status(404).json({error: "Page not found"})
+})
 
 // EXPORT
 module.exports = app;
