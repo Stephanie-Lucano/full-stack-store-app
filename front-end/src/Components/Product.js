@@ -1,7 +1,8 @@
-export default function Product() {
+import {Link} from "react-router-dom";
+export default function Product({product}) {
     return (
         <>
-            <p></p>
+            <Link to={`/products/${product.id}`}><p>{product.name} {product.price} {product.rating} 🪄</p></Link>
         </>
     )
 }

@@ -17,7 +17,7 @@ products.get("/", async (_, response) => {
 products.get("/:id", async (request, response) => {
     console.log("GET request to /products/:id")
     const oneProduct = await getOne(request.params.id);
-    response.status(404).json(oneProduct)
+    response.status(200).json(oneProduct)
 });
 
 products.post("/", async (request, response) => {
