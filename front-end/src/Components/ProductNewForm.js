@@ -1,10 +1,9 @@
 import axios from "axios";
-import {useState, useEffect} from "react";
-import {Link, useParams, useNavigate} from "react-router-dom";
-const API = process.env.REACT_APP_API_URL;
+import {useState} from "react";
+import {Link, useNavigate} from "react-router-dom";
 
 export default function ProductNewForm() {
-    const {id} = useParams();
+    const API = process.env.REACT_APP_API_URL;
     const navigate = useNavigate({});
     const [product, setProduct] = useState({
         name: "",

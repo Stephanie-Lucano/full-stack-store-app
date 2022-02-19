@@ -1,9 +1,9 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
 import {Link, useParams, useNavigate} from "react-router-dom";
-const API = process.env.REACT_APP_API_URL;
 
 export default function ProductEditForm() {
+    const API = process.env.REACT_APP_API_URL;
     const {id} = useParams();
     const navigate = useNavigate();
     const [product, setProduct] = useState({

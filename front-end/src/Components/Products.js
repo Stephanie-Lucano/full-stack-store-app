@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Product from "./Product";
-const API = process.env.REACT_APP_API_URL;
 
 export default function Products() {
+    const API = process.env.REACT_APP_API_URL;
     const [products, setProducts] = useState([])
     useEffect(() => {
         axios
