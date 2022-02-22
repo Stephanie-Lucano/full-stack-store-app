@@ -13,7 +13,7 @@ export default function Products() {
     }, [API])
     return (
         <>
-            <p>table appears 🪄</p>
+            {/* <p>table appears 🪄</p> */}
             {products.map((product) => <Product key={product.id} product={product} />)}
         </>
     )
