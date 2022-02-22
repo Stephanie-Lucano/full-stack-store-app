@@ -1,11 +1,18 @@
-import { Link } from "react-router-dom";
-
-export default function Navbar() {
+import {Nav, Navbar, NavItem, NavLink, NavbarBrand} from 'reactstrap';
+export default function Header() {
     return (
-        <>
-            <Link to="/"><button>Curated Items by Stephanie</button></Link>
-            <Link to="/products"><button>All Items</button></Link>
-            <Link to="/products/new"><button>Create New Item</button></Link>
-        </>
+        <div>
+        <Navbar color="light" light expand="md" pills>
+            <NavbarBrand href="/">Home</NavbarBrand>
+            <Nav>
+            <NavItem>
+                <NavLink href="/products">All items</NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink href="/products/new">Create New Item</NavLink>
+            </NavItem>
+            </Nav>
+        </Navbar>
+        </div>
     )
 }

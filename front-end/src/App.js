@@ -1,4 +1,4 @@
-import Navbar from "./Components/Navbar";
+import Header from "./Components/Navbar";
 import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
@@ -10,8 +10,7 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div>
-      <p>CSS</p>
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/products" element={<Index />}></Route>

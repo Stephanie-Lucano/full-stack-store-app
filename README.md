@@ -172,3 +172,11 @@ The content of the `_redirects` file should be
 
 ## Deployment
 [Click here](https://mystifying-goldwasser-2da0e1.netlify.app/)
+
+## References
+[Author: Glad Chinda](https://blog.logrocket.com/how-to-use-bootstrap-with-react-a354715d1121/)
+[Pursuit Doc](https://github.com/joinpursuit/Intro-to-Bootstrap-CSS-Code-Along)
+[Official Bootstrap Documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+[Author: Manish Mandal](https://medium.com/how-to-react/use-react-router-link-with-bootstrap-315a8b88e129)
+[reactstrap](https://6-4-0--reactstrap.netlify.app/components/form/)
+[reactstrap docs](https://reactstrap.github.io/?path=/docs/components-button--button)
