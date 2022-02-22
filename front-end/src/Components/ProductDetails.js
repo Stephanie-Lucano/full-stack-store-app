@@ -30,7 +30,7 @@ export default function ProductDetails() {
     };
     return (
         <>
-            <img width="50%"src={product.image} />
+            <img width="50%"src={product.image} alt="furniture" />
             <p>{product.name}</p>
             <p>{"$"+product.price}</p>
             <p>{product.rating+"🌟"}</p>

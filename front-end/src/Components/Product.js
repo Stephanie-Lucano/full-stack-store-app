@@ -9,7 +9,7 @@ export default function Product({product}) {
                 <Card>
                     <CardBody>
                         <CardLink href={`/products/${product.id}`}>
-                            <img width="100%" src={product.image} alt="Product image"/>
+                            <img width="100%" src={product.image} alt="aspiring furniture looks for customers home" />
                         </CardLink>
                         <CardTitle>{product.name}</CardTitle>
                         <CardText>{"$"+product.price}</CardText>
