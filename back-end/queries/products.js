@@ -20,10 +20,10 @@ const getOne = async (id) => {
 
 const postOne = async (product) => {
     try {
-        const {name, price, rating, featured} = product;
+        const {name, price, rating, featured, image} = product;
         const postProduct = await db.one(
-            "INSERT INTO products (name, price, rating, featured) VALUES ($1, $2, $3, $4) RETURNING *",
-            [name, price, rating, featured]
+            "INSERT INTO products (name, price, rating, featured, image) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+            [name, price, rating, featured, image || ""]
         );
         return postProduct;
     } catch (error) {
@@ -42,10 +42,10 @@ const deleteOne = async (id) => {
 
 const updateOne = async (id, product) => {
     try {
-        const {name, price, rating, featured} = product;
+        const {name, price, rating, featured, image} = product;
         const updateProduct = await db.one(
-            "UPDATE products SET name=$2, price=$3, rating=$4, featured=$5 WHERE id=$1 RETURNING *",
-            [id, name, price, rating, featured]
+            "UPDATE products SET name=$2, price=$3, rating=$4, featured=$5, image=$6 WHERE id=$1 RETURNING *",
+            [id, name, price, rating, featured, image || ""]
         );
         return updateProduct;
     } catch (error) {
