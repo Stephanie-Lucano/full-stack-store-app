@@ -16,6 +16,8 @@ export default function Stars(price) {
         case 5: 
             star = "🌟🌟🌟🌟🌟"
             break;
+        default: 
+            console.log("Error")
     }
 
     return (
