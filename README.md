@@ -180,3 +180,4 @@ The content of the `_redirects` file should be
 [Author: Manish Mandal](https://medium.com/how-to-react/use-react-router-link-with-bootstrap-315a8b88e129)
 [reactstrap](https://6-4-0--reactstrap.netlify.app/components/form/)
 [reactstrap docs](https://reactstrap.github.io/?path=/docs/components-button--button)
+[Ikea](https://www.ikea.com/us/en/)

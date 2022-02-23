@@ -5,11 +5,13 @@ import {Col, Button, Form, FormGroup, Label, Input, FormText, Row} from "reactst
 
 export default function ProductNewForm() {
     const API = process.env.REACT_APP_API_URL;
-    const navigate = useNavigate({});
+    const navigate = useNavigate();
     const [product, setProduct] = useState({
         name: "",
         price: 0,
-        rating: 0
+        rating: 0,
+        featured: false,
+        image: ""
     });
 
     const handleSubmit = (event) => {
@@ -22,19 +24,22 @@ export default function ProductNewForm() {
             name: "",
             price: 0,
             rating: 0,
-            featured: false
+            featured: false,
+            image: ""
         });
     };
     const handleTextChange = (event) => {
         setProduct({...product, [event.target.id]:event.target.value})
     };
     const handleCheckboxChange = (event) => {
-        setProduct({...product, [event.target.value]:!product.featured})
+        setProduct({...product, [event.target.id]:!product.featured})
     };
+
     return (
         <>
             {/* <p>Empty form fields 🪄</p> */}
             <Form>
+
                 <FormGroup row>
                 <Label for="name" sm={2}>Name</Label>
                 <Col sm={10}>
@@ -48,6 +53,7 @@ export default function ProductNewForm() {
                 ></Input>
                 </Col>
                 </FormGroup>
+
                 <FormGroup row>
                 <Label for="price" sm={2}>Price</Label>
                 <Col sm={10}>
@@ -61,6 +67,7 @@ export default function ProductNewForm() {
                 ></Input>
                 </Col>
                 </FormGroup>
+
                 <FormGroup row>
                 <Label for="rating" sm={2}>Rating</Label>
                 <Col sm={10}>
@@ -80,6 +87,7 @@ export default function ProductNewForm() {
                 </Input>
                 </Col>
                 </FormGroup>
+
                 <FormGroup row>
                 <Label for="featured" sm={2}>Featured</Label>
                 <Col sm={10}>
@@ -92,15 +100,24 @@ export default function ProductNewForm() {
                 ></Input>
                 </Col>
                 </FormGroup>
+
                 <FormGroup row>
-                <Label for="url" sm={2}>URL</Label>
+                <Label for="image" sm={2}>URL</Label>
                 <Col sm={10}>
-                <Input placeholder="http:// or https://" type="url" name="url" id="url" />
+                <Input 
+                id="image" 
+                name="image" 
+                type="text" 
+                value={product.image}
+                onChange={handleTextChange}
+                placeholder="http:// or https://" 
+                ></Input>
                 <FormText color="muted">
-                    Add a picture
+                    Add an image link
                 </FormText>
                 </Col>
                 </FormGroup>
+
             </Form>
             <Row>
                 <Col xs={6} sm={2}>

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import {Row, Col, Button} from "reactstrap";
+import Stars from "../Functions/stars";
 
 export default function ProductDetails() {
     const API = process.env.REACT_APP_API_URL;
@@ -9,19 +10,19 @@ export default function ProductDetails() {
     console.log(API, id)
     const navigate = useNavigate();
     const [product, setProduct] = useState({
-        image: "",
-        name: "empty",
+        name: "",
         price: 0,
-        rating: 0
+        rating: 0,
+        featured: false,
+        image: ""
     });
-
+    
     useEffect(() => {
         axios
         .get(`${API}/products/${id}`)
         .then((response) => setProduct(response.data))
         .catch((error) => console.log(error))
     }, [API, id]);
-    console.log(product, API);
     const handleDelete = () => {
         axios
         .delete(`${API}/products/${id}`, product)
@@ -30,10 +31,12 @@ export default function ProductDetails() {
     };
     return (
         <>
-            <img width="50%"src={product.image} alt="furniture" />
+            <img width="50%" src={product.image} alt="furniture" />
             <p>{product.name}</p>
             <p>{"$"+product.price}</p>
-            <p>{product.rating+"🌟"}</p>
+            <p>{Stars(product.rating)}</p>
+            <p>{product.featured ? "featured": ""}</p>
+            
             <Row>
             <Col sm={2}>
             <Link to="/products">
@@ -46,7 +49,7 @@ export default function ProductDetails() {
             </Link>
             </Col>
             <Col xs={6} sm={2}>
-                <Button onClick={handleDelete} color="danger">Delete</Button>{" "}
+                <Button onClick={handleDelete} color="danger">Delete</Button>
             </Col>
             </Row>
         </>

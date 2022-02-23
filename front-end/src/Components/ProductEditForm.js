@@ -7,11 +7,13 @@ export default function ProductEditForm() {
     const API = process.env.REACT_APP_API_URL;
     const {id} = useParams();
     const navigate = useNavigate();
+
     const [product, setProduct] = useState({
         name: "",
         price: 0,
         rating: 0,
-        featured: false
+        featured: false,
+        image: ""
     });
 
     useEffect(() => {
@@ -21,7 +23,6 @@ export default function ProductEditForm() {
     }, [API, id]);
 
     const handleSubmit = (event) => {
-        event.preventDefault();
         axios.put(`${API}/products/${id}`, product)
         .then(() => navigate(`/products/${id}`))
         .catch((error) => console.log(error))
@@ -31,7 +32,8 @@ export default function ProductEditForm() {
             name: "",
             price: 0,
             rating: 0,
-            featured: false
+            featured: false,
+            image: ""
         });
     };
     const handleTextChange = (event) => {
@@ -68,6 +70,9 @@ export default function ProductEditForm() {
                 onChange={handleTextChange}
                 required
                 ></Input>
+                <FormText color="muted">
+                    Don't add the money symbol, '$'
+                </FormText>
                 </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -89,6 +94,7 @@ export default function ProductEditForm() {
                 </Input>
                 </Col>
                 </FormGroup>
+
                 <FormGroup row>
                 <Label for="featured" sm={2}>Featured</Label>
                 <Col sm={10}>
@@ -101,22 +107,30 @@ export default function ProductEditForm() {
                 ></Input>
                 </Col>
                 </FormGroup>
+
                 <FormGroup row>
-                <Label for="url" sm={2}>URL</Label>
+                <Label for="image" sm={2}>URL</Label>
                 <Col sm={10}>
-                <Input placeholder="http:// or https://" type="url" name="url" id="url" />
-                <FormText color="muted">
-                    Add a picture
-                </FormText>
+                <Input 
+                id="image" 
+                name="image"
+                type="text"
+                value={product.image}
+                onChange={handleTextChange}
+                >
+                </Input>
+                <FormText color="muted">Add a the image url address</FormText>
                 </Col>
                 </FormGroup>
+
             </Form>
+
             <Row>
             <Col xs={6} sm={2}>
-            <Button onClick={handleSubmit} color="success">Submit</Button>{" "}
+            <Button onClick={handleSubmit} color="success">Submit</Button>
             </Col>
             <Col xs={6} sm={2}>
-            <Button onClick={handleClearAll} color="danger">Clear All</Button>{" "}
+            <Button onClick={handleClearAll} color="danger">Clear All</Button>
             </Col>
             <Col sm={2}>
             <Link to={`/products/${id}`}>
@@ -124,6 +138,7 @@ export default function ProductEditForm() {
             </Link>
             </Col>
             </Row>
+
         </>
     );
 };

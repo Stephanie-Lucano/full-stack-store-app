@@ -2,7 +2,7 @@ import {Nav, Navbar, NavItem, NavLink, NavbarBrand} from 'reactstrap';
 export default function Header() {
     return (
         <div>
-        <Navbar color="light" light expand="md" pills>
+        <Navbar color="light" light expand="md" pills="true">
             <NavbarBrand href="/">Home</NavbarBrand>
             <Nav>
             <NavItem>

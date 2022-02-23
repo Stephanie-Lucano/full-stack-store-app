@@ -8,7 +8,7 @@ export default function Home() {
         size: "cover"
     };
     const textStyle = {
-        "font-family": 'Montserrat'
+        "fontFamily": 'Montserrat'
     };
     return (
         <>

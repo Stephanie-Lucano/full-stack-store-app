@@ -1,4 +1,5 @@
-import {Card, CardText, CardBody, CardTitle, Row, Col, CardColumns, CardLink} from "reactstrap";
+import {Card, CardText, CardBody, CardTitle, Row, Col, CardColumns, CardLink, Button, CardImg} from "reactstrap";
+import Stars from "../Functions/stars";
 
 export default function Product({product}) {
     return (
@@ -7,13 +8,15 @@ export default function Product({product}) {
             <Col sm="4">
             <CardColumns>
                 <Card>
+                    <CardImg top width="50%" src={product.image} alt="aspiring furniture looks for customers home" />
                     <CardBody>
-                        <CardLink href={`/products/${product.id}`}>
-                            <img width="100%" src={product.image} alt="aspiring furniture looks for customers home" />
-                        </CardLink>
                         <CardTitle>{product.name}</CardTitle>
                         <CardText>{"$"+product.price}</CardText>
-                        <CardText>{product.rating+"🌟"}</CardText>
+                        {/* <CardText>{product.rating+"🌟"}</CardText> */}
+                        <CardText>{Stars(product.rating)}</CardText>
+                        <CardLink href={`/products/${product.id}`}>
+                        <Button>View</Button>
+                        </CardLink>
                     </CardBody>
                 </Card>
             </CardColumns>
