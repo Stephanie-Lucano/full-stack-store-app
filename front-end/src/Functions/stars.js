@@ -17,7 +17,7 @@ export default function Stars(price) {
             star = "🌟🌟🌟🌟🌟"
             break;
         default: 
-            console.log("Error")
+            star = ""
     }
 
     return (

@@ -35,7 +35,7 @@ export default function ProductDetails() {
             <p>{product.name}</p>
             <p>{"$"+product.price}</p>
             <p>{Stars(product.rating)}</p>
-            <p>{product.featured ? "featured": ""}</p>
+            <p>{product.image ? "Best Seller 💎" : ""}</p>
             
             <Row>
             <Col sm={2}>
