@@ -171,13 +171,21 @@ The content of the `_redirects` file should be
 [More info](https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/#main)
 
 ## Deployment
-[Click here](https://mystifying-goldwasser-2da0e1.netlify.app/)
+[Netlify](https://mystifying-goldwasser-2da0e1.netlify.app/)
+
+[Heroku](https://dashboard.heroku.com/apps/intense-basin-27069)
 
 ## References
 [Author: Glad Chinda](https://blog.logrocket.com/how-to-use-bootstrap-with-react-a354715d1121/)
+
 [Pursuit Doc](https://github.com/joinpursuit/Intro-to-Bootstrap-CSS-Code-Along)
+
 [Official Bootstrap Documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+
 [Author: Manish Mandal](https://medium.com/how-to-react/use-react-router-link-with-bootstrap-315a8b88e129)
+
 [reactstrap](https://6-4-0--reactstrap.netlify.app/components/form/)
+
 [reactstrap docs](https://reactstrap.github.io/?path=/docs/components-button--button)
+
 [Ikea](https://www.ikea.com/us/en/)

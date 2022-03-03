@@ -21,6 +21,7 @@ const getOne = async (id) => {
 const postOne = async (product) => {
     try {
         const {name, price, rating, featured, image} = product;
+
         const postProduct = await db.one(
             "INSERT INTO products (name, price, rating, featured, image) VALUES ($1, $2, $3, $4, $5) RETURNING *",
             [name, price, rating, featured, image || ""]
