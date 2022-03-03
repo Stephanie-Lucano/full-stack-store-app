@@ -173,7 +173,7 @@ The content of the `_redirects` file should be
 ## Deployment
 [Netlify](https://mystifying-goldwasser-2da0e1.netlify.app/)
 
-[Heroku](https://dashboard.heroku.com/apps/intense-basin-27069)
+[Heroku](https://intense-basin-27069.herokuapp.com/)
 
 ## References
 [Author: Glad Chinda](https://blog.logrocket.com/how-to-use-bootstrap-with-react-a354715d1121/)
